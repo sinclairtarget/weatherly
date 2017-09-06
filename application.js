@@ -4,11 +4,11 @@ addRowCell = function(rowClass) {
     return $(rowClass + " .prototype").clone()
                                       .removeClass("prototype")
                                       .appendTo(rowClass);
-}
+};
 
 displayTemp = function(temp, prefix, symbol) {
     return prefix + temp + "˚" + symbol;
-}
+};
 
 showResults = function(periods) {
     $(".loading-indicator").hide();
@@ -42,7 +42,7 @@ showResults = function(periods) {
                                .data("temp-f", lowF)
                                .data("temp-c", lowC);
     });
-}
+};
 
 toggleTemp = function($toggleButton) {
     $cells = $(".highs-row td:not(.prototype), .lows-row td:not(.prototype)");
@@ -61,7 +61,7 @@ toggleTemp = function($toggleButton) {
         });
         $toggleButton.data("using-f", true);
     }
-}
+};
 
 fetchWeather = function() {
     url = "http://api.aerisapi.com/forecasts/11101?client_id=7YerZwAFYOYbaKl59822u&client_secret=qgBnkFBZbBC4LtTs5qtuM46G6khNfH6e7QODCFyD"
@@ -76,7 +76,7 @@ fetchWeather = function() {
     }).fail(function(err) {
         throw err;
     });
-}
+};
 
 $(document).on("click", ".temp-toggle", function(event) {
     event.preventDefault();
