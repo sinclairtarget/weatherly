@@ -6,6 +6,10 @@ addRowCell = function(rowClass) {
                                       .appendTo(rowClass);
 }
 
+displayTemp = function(temp, prefix, symbol) {
+    return prefix + temp + "˚" + symbol;
+}
+
 showResults = function(periods) {
     $(".loading-indicator").hide();
     $(".results").show();
@@ -25,15 +29,38 @@ showResults = function(periods) {
                                 .attr("src", "icons/" + icon);
 
         // Highs
-        highF = period["maxTempF"];
-        highC = period["maxTempC"];
-        addRowCell(".highs-row").text("High: " + highF + "˚F");
+        highF = displayTemp(period["maxTempF"], "High: ", "F");
+        highC = displayTemp(period["maxTempC"], "High: ", "C");
+        addRowCell(".highs-row").text(highF)
+                                .data("temp-f", highF)
+                                .data("temp-c", highC);
 
         // Lows
-        lowF = period["minTempF"];
-        lowC = period["minTempC"];
-        addRowCell(".lows-row").text("Low: " + lowF + "˚F");
+        lowF = displayTemp(period["minTempF"], "Low: ", "F");
+        lowC = displayTemp(period["minTempC"], "Low: ", "C");
+        addRowCell(".lows-row").text(lowF)
+                               .data("temp-f", lowF)
+                               .data("temp-c", lowC);
     });
+}
+
+toggleTemp = function($toggleButton) {
+    $cells = $(".highs-row td:not(.prototype), .lows-row td:not(.prototype)");
+
+    if ($toggleButton.data("using-f")) {
+        $cells.each(function(index, cell) {
+            $cell = $(cell);
+            $cell.text($cell.data("temp-c"));
+        });
+        $toggleButton.data("using-f", false);
+    }
+    else {
+        $cells.each(function(index, cell) {
+            $cell = $(cell);
+            $cell.text($cell.data("temp-f"));
+        });
+        $toggleButton.data("using-f", true);
+    }
 }
 
 fetchWeather = function() {
@@ -50,6 +77,11 @@ fetchWeather = function() {
         throw err;
     });
 }
+
+$(document).on("click", ".temp-toggle", function(event) {
+    event.preventDefault();
+    toggleTemp($(this));
+});
 
 $(function() {
     fetchWeather();
