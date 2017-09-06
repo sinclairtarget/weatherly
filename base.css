@@ -13,3 +13,7 @@
 .highs-row td, .lows-row td {
     padding: 0 12px;
 }
+
+.prototype { 
+    display: none;
+}
