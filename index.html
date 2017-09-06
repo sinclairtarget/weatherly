@@ -5,30 +5,35 @@
     <script src="application.js"></script>
   </head>
   <body>
-    <p class="loading-indicator">Fetching weather...</p>
-    <div class="results">
-      <table>
-        <h2>This Week's Forecast</h2>
-        <thead>
-          <tr class="dates-row">
-            <th class="prototype">08/11/17</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="icons-row">
-            <td class="prototype"><img src="icons/fair.png"></td>
-          </tr>
-          <tr class="highs-row">
-            <td class="prototype">High: 27˚C</td>
-          </tr>
-          <tr class="lows-row">
-            <td class="prototype">Low: 23˚C</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>
-        <a href="#" class="temp-toggle" data-using-f="true">Toggle ˚F/˚C</a>
-      </p>
-    </div>
+    <header>
+      <h2>weatherly.io</h2>
+    </header>
+    <main>
+      <p class="loading-indicator">Fetching weather...</p>
+      <div class="results">
+        <table>
+          <h2>This Week's Forecast</h2>
+          <thead>
+            <tr class="dates-row">
+              <th class="prototype">08/11/17</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="icons-row">
+              <td class="prototype"><img src="icons/fair.png"></td>
+            </tr>
+            <tr class="highs-row">
+              <td class="prototype">High: 27˚C</td>
+            </tr>
+            <tr class="lows-row">
+              <td class="prototype">Low: 23˚C</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          <a href="#" class="temp-toggle" data-using-f="true">Toggle ˚F/˚C</a>
+        </p>
+      </div>
+    </main>
   </body>
 </html>

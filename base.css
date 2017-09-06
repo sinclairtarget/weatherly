@@ -1,9 +1,43 @@
+body {
+    margin: 0;
+    font-size: 62.5%;
+}
+
+h2 {
+    font-family: Tahoma, sans-serif;
+    font-size: 1.6rem;
+    margin: 0.4rem;
+}
+
+p, td, th {
+    font-size: 1rem;
+    font-family: Calibri, sans-serif;
+}
+
+p {
+    margin: 0.4rem;
+}
+
+header {
+    color: white;
+    background-color: #538096;
+    padding: 0.8rem;
+    padding-left: 30px;
+}
+
+main {
+    padding: 12px 30px;
+}
+
 .results {
     display: none;
 }
 
 .results table {
     text-align: center;
+    background-color: #e7f2f7;
+    border-radius: 10px;
+    padding-bottom: 12px;
 }
 
 .dates-row th, .icons-row td {
