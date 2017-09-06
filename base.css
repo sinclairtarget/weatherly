@@ -1,3 +1,15 @@
 .results {
     display: none;
 }
+
+.results table {
+    text-align: center;
+}
+
+.dates-row th, .icons-row td {
+    padding: 12px;
+}
+
+.highs-row td, .lows-row td {
+    padding: 0 12px;
+}
