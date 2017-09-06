@@ -6,11 +6,6 @@ addRowCell = function(rowClass) {
                                       .appendTo(rowClass);
 }
 
-showLoading = function() {
-    $(".loading-indicator").show();
-    $(".results").hide();
-}
-
 showResults = function(periods) {
     $(".loading-indicator").hide();
     $(".results").show();
