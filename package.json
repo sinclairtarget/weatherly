@@ -1,0 +1,10 @@
+{
+  "name": "c4q_weather",
+  "version": "1.0.0",
+  "main": "application.js",
+  "author": "Sinclair Target <sinclairtarget@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
